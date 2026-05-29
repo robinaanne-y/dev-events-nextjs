@@ -32,6 +32,8 @@ export async function connectToDatabase(): Promise<Mongoose> {
   if (!cached.promise) {
     const options: ConnectOptions = {
       bufferCommands: false,
+      serverSelectionTimeoutMS: 5000,
+      connectTimeoutMS: 10000,
     };
 
     // Store the in-flight promise so concurrent calls share one connection.
