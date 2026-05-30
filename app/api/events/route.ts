@@ -3,6 +3,11 @@ import {connectToDatabase} from "@/lib/mongodb";
 import Event from '@/database/event.model';
 import { v2 as cloudinary } from 'cloudinary';
 
+/**
+ * POST request for creating events
+ * @param req
+ * @constructor
+ */
 export async function POST(req:NextRequest) {
     try{
         await connectToDatabase();
@@ -42,6 +47,11 @@ export async function POST(req:NextRequest) {
     }
 }
 
+
+/**
+ * GET request to fetch all events
+ * @constructor
+ */
 export async function GET(){
     try {
         await connectToDatabase();
@@ -53,3 +63,4 @@ export async function GET(){
         return NextResponse.json({ message: 'Event fetching failed', error: e }, { status: 500 });
     }
 }
+
