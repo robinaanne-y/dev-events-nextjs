@@ -1,5 +1,5 @@
 import { HydratedDocument, Model, Schema, Types, model, models } from "mongoose";
-import { Event } from "./event.model";
+import Event from "./event.model";
 
 export interface IBooking {
   eventId: Types.ObjectId;
